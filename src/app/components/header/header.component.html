@@ -3,9 +3,11 @@
 >
   <h3>Header Works</h3>
   <div class="flex gap-5">
-    <a routerLink="/" routerLinkActive="active">Home</a>
-    <a routerLink="/shop" routerLinkActive="active">Shop</a>
-    <a routerLink="/contact" routerLinkActive="active">Contact</a>
+    <a routerLink="{{ '/' + route.HOME }}" routerLinkActive="active">Home</a>
+    <a routerLink="{{ '/' + route.SHOP }}" routerLinkActive="active">Shop</a>
+    <a routerLink="{{ '/' + route.CONTACT }}" routerLinkActive="active">
+      Contact
+    </a>
   </div>
-  <div><button mat-flat-button (click)="onNavigateOrder()" >Order</button></div>
+  <div><button mat-flat-button (click)="onNavigateOrder()">Order</button></div>
 </div>
