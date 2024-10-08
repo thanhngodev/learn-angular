@@ -1,0 +1,8 @@
+<ng-container *ngIf="loading$ | async as loading">
+  <span *ngIf="loading">
+    <mat-progress-bar
+      mode="indeterminate"
+      class="fixed top-0"
+    ></mat-progress-bar>
+  </span>
+</ng-container>

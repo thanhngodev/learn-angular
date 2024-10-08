@@ -1,0 +1,53 @@
+<div>
+  <h2 class="text-[36px] font-bold uppercase w-full text-center">
+    contact works!
+  </h2>
+
+  <span class="font-bold">
+    Update Signal with method mutate thì angular v16 okie còn >= v17 not support
+  </span>
+  <div class="pt-4">
+    <div class="bg-slate-300 rounded-xl p-4">
+      <div>Signal Count Value: {{ count() }}</div>
+      <div>Signal Double Count Value: {{ doubleCount() }}</div>
+      <button mat-raised-button (click)="onClickCount()" class="mt-2">
+        Click Count
+      </button>
+    </div>
+  </div>
+
+  <div class="pt-4">
+    <div class="bg-orange-300 rounded-xl p-4">
+      <div>Signal Cat name {{ cat().name }}, age {{ cat().age }}</div>
+      <div>This is an {{ oldCat() ? "old" : "young" }} cat</div>
+      <button mat-raised-button (click)="onClickCat()" class="mt-2">
+        Click Cat
+      </button>
+    </div>
+  </div>
+
+  <ng-container *ngIf="userSelected()">
+    <div class="px-5 w-full mt-4">
+      <div>User Selected : {{ userSelected()?.name || "" }}</div>
+    </div>
+  </ng-container>
+
+  <div
+    *ngIf="users().length"
+    class="bg-slate-200 px-5 rounded-xl mt-4 max-h-[300px] w-full overflow-y-scroll"
+  >
+    <ng-container *ngFor="let user of users()">
+      <div
+        class="py-3 w-full flex justify-between items-center border-b-2 border-white last:border-none"
+      >
+        <div>
+          <div>Name: {{ user.name }}</div>
+          <div>Date: {{ user.createdAt | date : "YYYY-MM-dd" }}</div>
+        </div>
+        <button mat-raised-button (click)="onClickSelected(user)" class="mt-2">
+          Selected
+        </button>
+      </div>
+    </ng-container>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<h2 class="text-[36px] font-bold uppercase w-full text-center">shop works!</h2>
+<ng-container *ngIf="users$ | async as users; else noData">
+  <div class="bg-slate-200 px-5 rounded-md">
+    <ng-container *ngFor="let user of users">
+      <div class="py-3">
+        <div>Name: {{ user.name }}</div>
+        <div>Date: {{ user.createdAt | date : "YYYY-MM-dd" }}</div>
+      </div>
+    </ng-container>
+  </div>
+  <div class="bg-red-200 px-5 min-h-8 rounded-md mt-4 p-5">
+    <h2 class="mb-2 font-bold text-[20px]">New User</h2>
+    <div *ngFor="let newUser of newUsers$ | async" class="py-1 last:pb-0">
+      {{ newUser.name }}
+    </div>
+  </div>
+</ng-container>
+<ng-template #noData> No Data </ng-template>

@@ -1,0 +1,11 @@
+<div
+  class="flex justify-between w-full h-16 shadow-xl px-6 items-center bg-white"
+>
+  <h3>Header Works</h3>
+  <div class="flex gap-5">
+    <a routerLink="/" routerLinkActive="active">Home</a>
+    <a routerLink="/shop" routerLinkActive="active">Shop</a>
+    <a routerLink="/contact" routerLinkActive="active">Contact</a>
+  </div>
+  <div><button mat-flat-button (click)="onNavigateOrder()" >Order</button></div>
+</div>
