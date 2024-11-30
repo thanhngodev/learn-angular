@@ -3,11 +3,11 @@
 >
   <h3>Header Works</h3>
   <div class="flex gap-5">
-    <a routerLink="{{ '/' + route.HOME }}" routerLinkActive="active">Home</a>
-    <a routerLink="{{ '/' + route.SHOP }}" routerLinkActive="active">Shop</a>
-    <a routerLink="{{ '/' + route.CONTACT }}" routerLinkActive="active">
-      Contact
-    </a>
+    <ng-container *ngFor="let navItem of navMenu" >
+      <a routerLink="{{ '/' + navItem.routerLink }}" routerLinkActive="active">{{ navItem.label || '' }}</a>
+    </ng-container>
   </div>
-  <div><button mat-flat-button (click)="onNavigateOrder()">Order</button></div>
+  <div>
+    <button mat-flat-button (click)="onNavigateOrder()">Order</button>
+  </div>
 </div>
