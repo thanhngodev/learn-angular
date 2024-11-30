@@ -7,11 +7,14 @@ import { OrderInformationComponent } from "./components/order-information/order-
 import { OrderConfirmComponent } from "./components/order-confirm/order-confirm.component";
 import { OrderPaymentComponent } from "./components/order-payment/order-payment.component";
 import { NotFoundComponent } from "./components/not-found/not-found.component";
+import { ChangeDetectionComponent } from "./components/change-detection/change-detection.component";
+import { ROUTE } from "./common/route.common";
 
 export const routes: Routes = [
-  { path: "", component: HomeComponent },
-  { path: "shop", component: ShopComponent },
-  { path: "contact", component: ContactComponent },
+  { path: ROUTE.HOME, component: HomeComponent },
+  { path: ROUTE.SHOP, component: ShopComponent },
+  { path: ROUTE.CONTACT, component: ContactComponent },
+  { path: ROUTE.CHANGE_DETECTION, component: ChangeDetectionComponent },
   {
     path: "order",
     component: OrderComponent,
